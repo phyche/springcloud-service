@@ -1,4 +1,4 @@
-package com.example.springcloud.authentication.security;
+package com.example.springcloud.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -32,11 +32,11 @@ public class SpecialRoutesFilter extends ZuulFilter {
     @Override
     public Object run() {
         RequestContext context = RequestContext.getCurrentContext();
-        logger.info("outbound headers:" + FilterUtil.getCorrelationId());
+        System.out.println("outbound headers:" + FilterUtil.getCorrelationId());
         //获取原始HTTP请求中传入的关联ID，并将它注入响应中
         context.getResponse().addHeader(FilterUtil.CORRELATION_ID, FilterUtil.getCorrelationId());
         //记录传出的请求URI，它将显示Zuul的用户请求的传入和传出条目
-        logger.info("outgoing request for:" + context.getRequest().getRequestURI());
+        System.out.println("outgoing request for:" + context.getRequest().getRequestURI());
         return null;
     }
 }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.springcloud.dao.OrganizationDao" >
+
+    <resultMap id="BaseResultMap" type="com.example.springcloud.module.Organization" >
+        <id column="organization_id" property="orgId" jdbcType="VARCHAR" />
+        <result column="organization_name" property="orgName" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <sql id="Base_Column_List" >
+        organization_id, organization_name
+    </sql>
+
+    <select id="queryByOrgId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+        select
+        <include refid="Base_Column_List" />
+        from ORGANIZATION
+        where organization_id = #{organizationId,jdbcType=VARCHAR}
+    </select>
+
+    <insert id="saveOrg" parameterType="com.example.springcloud.module.Organization">
+        INSERT INTO ORGANIZATION(organization_id,organization_name) VALUES (#{orgId},#{orgName});
+    </insert>
+</mapper>

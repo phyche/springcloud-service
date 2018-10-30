@@ -53,13 +53,13 @@ public class TrackingFilter extends ZuulFilter {
     //生成一个关联值，并设置HTTP首部tmx-correlation-id
     public Object run() {
         if (isCorrelationIdPresent()) {
-            logger.info("found:" + FilterUtil.getCorrelationId());
+            System.out.println("found:" + FilterUtil.getCorrelationId());
         } else {
             FilterUtil.setCorrelationId(generateCorrelationId());
-            logger.info("generated:" + FilterUtil.getCorrelationId());
+            System.out.println("generated:" + FilterUtil.getCorrelationId());
         }
         RequestContext context = RequestContext.getCurrentContext();
-        logger.info("incoming request:" +context.getRequest().getRequestURI());
+        System.out.println("incoming request:" +context.getRequest().getRequestURI());
         return null;
     }
 }

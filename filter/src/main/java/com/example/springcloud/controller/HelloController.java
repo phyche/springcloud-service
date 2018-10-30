@@ -5,6 +5,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * Spring Cloud和Zuul进行服务路由
+ */
 @RestController
 public class HelloController {
 

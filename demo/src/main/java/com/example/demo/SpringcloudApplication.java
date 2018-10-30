@@ -14,7 +14,6 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 //@EnableEurekaServer //此服务即是eureka注册中心又是服务的提供者
 @EnableEurekaClient
-@EnableCircuitBreaker//如果没有则hystrix断路器不会处于活动状态
 public class SpringcloudApplication {
 
 	@LoadBalanced

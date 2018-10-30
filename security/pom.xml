@@ -67,6 +67,14 @@
 			<artifactId>spring-security-oauth2</artifactId>
 		</dependency>
 
+        <!--  JSON begin  -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.1.40</version>
+        </dependency>
+        <!--  JSON end -->
+
 	</dependencies>
 
 	<dependencyManagement>

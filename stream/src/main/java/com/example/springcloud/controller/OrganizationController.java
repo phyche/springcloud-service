@@ -1,7 +1,8 @@
 package com.example.springcloud.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.example.springcloud.service.LicenseService;
+import com.example.springcloud.module.Organization;
+import com.example.springcloud.service.OrganizationService;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,25 +11,25 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-/**
- * Spring Cloud和Netflix Hystrix的客户端弹性模式
- */
 @RestController
 @SpringBootApplication(scanBasePackages = {"com.example.springcloud.service","com.example.springcloud.dao"})
 @MapperScan("com.example.springcloud.dao")
-public class HelloController {
+public class OrganizationController {
 
     @Autowired
-    private LicenseService licenseService;
+    private OrganizationService organizationService;
 
     @RequestMapping("/hello")
     public String hello() {
         return "welcome to spring cloud hystrix service";
     }
 
-    @RequestMapping("/license")
-    public String license() {
-        List licenseList = licenseService.getLicensesByOrg("1");
-        return JSONObject.toJSONString(licenseList);
+    @RequestMapping("/saveOrg")
+    public String saveOrg() {
+        List organization = organizationService.queryByOrgId("1");
+        /*Organization organization = new Organization();
+        organization.setOrgName("test");
+        organizationService.saveOrg(organization);*/
+        return JSONObject.toJSON(organization).toString();
     }
 }
