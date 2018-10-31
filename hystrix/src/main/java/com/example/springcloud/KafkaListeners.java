@@ -27,6 +27,7 @@ public class KafkaListeners {
             Map map = JSONUtil.parse(message,HashMap.class);//转map，通用
             System.out.println("receive an event for orgznization id: " + change.getOrgId());
 
+            //可以调用redis的服务，对消息进行处理
         }
 
     }

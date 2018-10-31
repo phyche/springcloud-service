@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 public class SimpleSourceBean {
 
     private Source source;
-    private static final Logger logger = Logger.getLogger(SimpleSourceBean.class);
 
     public SimpleSourceBean(Source source) {
         this.source = source;

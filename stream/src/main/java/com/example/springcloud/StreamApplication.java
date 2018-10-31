@@ -13,10 +13,6 @@ import org.springframework.cloud.stream.messaging.Source;
 @EnableBinding(Source.class)//将应用程序绑定到消息代理
 public class StreamApplication {
 
-	/*@Bean
-	public Filter userContextFilter() {
-		UserContextFilter userContextFilter = new usercon
-	}*/
 	public static void main(String[] args) {
 		SpringApplication.run(StreamApplication.class, args);
 	}

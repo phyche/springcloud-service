@@ -27,10 +27,10 @@ public class KafkaConsumerConfig {
         return factory;
     }
 
-
     public ConsumerFactory<String, String> consumerFactory() {
         Map<String, Object> properties = new HashMap<String, Object>();
-        properties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "132.126.3.55:9092");//注意这里修改为kafka的具体配置项目，我这里只是为了开发演示方便
+        //注意这里修改为kafka的具体配置项目，我这里只是为了开发演示方便
+        properties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "132.126.3.55:9092");
         properties.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
         properties.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, "100");
         properties.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, "15000");
